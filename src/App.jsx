@@ -9,8 +9,6 @@ import { useEffect } from 'react';
 import useTableRead from './hooks/database/use-table-read';
 
 function App() {
-  useTableRead({tableName:"foodtype"})
-  useEffect(()=>{},[])
   return (
     <>
       <CartProvider>

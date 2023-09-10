@@ -6,6 +6,7 @@ function Home(){
     const [data,loading,error]=useTableRead(
         {tableName:"foodtype"}
     )
+
     return(
         <>
         <div className=" my-5">
@@ -22,7 +23,7 @@ function Home(){
                 data.map((item,index) =>{
                     console.log(index,colors[index])
                     return(
-                        <Link to={item.link} className={` my-2 h-20 w-20 flex items-center justify-center bg-${colors[index]}-500 hover:text-blue-500 px-4 text-xl text-gray-50`}>{item.name}</Link>
+                        <Link to={`/${item.id}`} className={` my-2 h-20 w-20 flex items-center justify-center bg-${colors[index]}-500 hover:text-blue-500 px-4 text-xl text-gray-50`}>{item.name}</Link>
                     )
                 })
             ):(null)

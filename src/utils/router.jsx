@@ -13,6 +13,7 @@ import Meals from "../components/Meals";
 import Chats from "../components/Chats";
 import Juice from "../components/Juice";
 import IceCream from "../components/IceCream";
+import FoodItems from "../pages/food-items";
 
 const router=createBrowserRouter(
     [
@@ -41,29 +42,33 @@ const router=createBrowserRouter(
                     element:<Profile/>,
                 },
                 {
-                    path:"/pizza",
-                    element:<Pizza/>,
-                },
-                {
-                    path:"/dosa",
-                    element:<Dosa/>,
-                },
-                {
-                    path:"/meals",
-                    element:<Meals/>,
-                },
-                {
-                    path:"/chats",
-                    element:<Chats/>,
-                },
-                {
-                    path:"/juice",
-                    element:<Juice/>
-                },
-                {
-                    path:"/icecream",
-                    element:<IceCream/>,
-                },
+                    path: "/:id",
+                    element: <FoodItems />
+                }
+                // {
+                //     path:"/pizza",
+                //     element:<Pizza/>,
+                // },
+                // {
+                //     path:"/dosa",
+                //     element:<Dosa/>,
+                // },
+                // {
+                //     path:"/meals",
+                //     element:<Meals/>,
+                // },
+                // {
+                //     path:"/chats",
+                //     element:<Chats/>,
+                // },
+                // {
+                //     path:"/juice",
+                //     element:<Juice/>
+                // },
+                // {
+                //     path:"/icecream",
+                //     element:<IceCream/>,
+                // },
             ],
         },
     ],
