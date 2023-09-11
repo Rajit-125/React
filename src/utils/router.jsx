@@ -44,7 +44,7 @@ const router=createBrowserRouter(
                 {
                     path: "/:id",
                     element: <FoodItems />
-                }
+                },
                 // {
                 //     path:"/pizza",
                 //     element:<Pizza/>,

@@ -27,9 +27,6 @@ function FoodItems() {
 
     async function fetchData() { 
         const { data: d, error: e } = await Supabase.from("fooditem").select("*, foodtype(*)").eq("foodtype_id", id)
-
-        console.log(d, e)
-
         setData(d)
         setError(e)
     }
@@ -37,13 +34,11 @@ function FoodItems() {
 
     useEffect(() => {
         fetchData()
-
-        console.log(id)
     }, [])
 
     return(
         <>
-            <div className={" flex flex-col flex-1 bg-cover bg-[url('./assets/1.jpg')]"}>
+            <div className={` flex flex-col flex-1 bg-cover bg-[url('./assets/6.jpg')]`}>
             <h1 className=" mx-96 flex items-center text-9xl text-cyan-50">{data && data[0].foodtype.name}</h1>
             {
                 data && data.map(item=>

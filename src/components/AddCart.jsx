@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import CartContext from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function AddCart() {
     const cart = useContext(CartContext);
@@ -17,7 +19,7 @@ function AddCart() {
     );
 
     const placeOrderHandler = () => {
-
+    
     };
 
     return (
@@ -42,11 +44,12 @@ function AddCart() {
                         <p className="mx-10 mt-5 mb-10 text-2xl text-blue-400">
                             Total Amount: ${totalAmount.toFixed(2)}
                         </p>
-                        <button
+                       <Link to="/profile"><button
                             className="mx-10 flex items-center text-xl font-bold bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
                             onClick={placeOrderHandler}>
                             Place Order
                         </button>
+                        </Link>  
                     </div>
                 )}
             </div>
