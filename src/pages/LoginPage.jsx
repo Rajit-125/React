@@ -26,7 +26,7 @@ function LoginPage() {
       <div className=" w-full h-[100vh] flex flex-col flex-1 items-center justify-center bg-[url('./assets/rest.jpg')] bg-cover">
         <div className=" bg-blue-500 rounded-3xl px-4">
           <div>
-            <h1 className=" my-10 flex text-6xl text-cyan-50">Welcome❤️❤️</h1>
+            <h1 className=" my-10 flex text-6xl text-cyan-50">Welcome</h1>
           </div>
           <div className=" flex items-center ">
             <form id='login-form' method='POST' onSubmit={(e) => handlelogin(e, phonenumber)}>
