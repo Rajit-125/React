@@ -29,7 +29,9 @@ function AddCart() {
             const orderDetails = cart.cartData.map((item) => ({
                 itemname: item.name,
                 totalprice: item.price,
-                phonenumber:user.phone,
+                user_id:user.id,
+                phone_number:"91-9483846545",
+                no_of_items:item.count,
             }))
             const { error } = await Supabase.from("orderdetail").insert(orderDetails)
             console.log(error)
