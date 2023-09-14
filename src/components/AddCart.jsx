@@ -14,28 +14,33 @@ function AddCart() {
             return updatedCart.filter((item) => item.count > 0)
         });
     };
-    useEffect(()=>{
-        console.log(cart)
-    },[])
+    // useEffect(async () => {
+    //     const { data: { user } } = await Supabase.auth.getUser()
+    //     console.log(user)
+    // }, [])
     const totalAmount = cart.cartData.reduce(
         (total, item) => total + item.price * item.count, 0
     );
-    let navigate=useNavigate()
+    let navigate = useNavigate()
     async function placeOrderHandler() {
         try {
-          const orderDetails = cart.cartData.map((item,index) => ({
-            name: item.name[index],
-            price: item.price[index],
-          }))
-          await Supabase.from("orderdetail").insert(orderDetails)
-          cart.setCartData([])
-          navigate("/profile")
-          alert("Order placed successfully");
+
+            const { data: { user } } = await Supabase.auth.getUser()
+            const orderDetails = cart.cartData.map((item) => ({
+                itemname: item.name,
+                totalprice: item.price,
+                phonenumber:user.phone,
+            }))
+            const { error } = await Supabase.from("orderdetail").insert(orderDetails)
+            console.log(error)
+            cart.setCartData([])
+            navigate("/profile")
+            alert("Order placed successfully");
         } catch (error) {
-          console.error(error)
-          alert("Error occurred while placing the order");
+            console.error(error)
+            alert("Error occurred while placing the order");
         }
-      }      
+    }
 
     return (
         <>
